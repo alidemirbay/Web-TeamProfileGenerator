@@ -111,5 +111,18 @@ const promptEngineer = () => {
     })
 }
 
+const promptIntern = () => {
+    inquirer.prompt(internQuestion).then(answer => {
+        employeeList.push(new Intern(answer.name, answer.id, answer.email, answer.school));
+        promptSelection();
+    })
+}
 
+const generateHtml = () => {
+    fs.writeFile(outputPath, render(employeeList), (err) => {
+        if (err) throw err;
+        console.log('File saved at ' + outputPath);
+    })
+}
 
+promptSelection();
