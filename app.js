@@ -97,7 +97,12 @@ const promptSelection = () => {
         }
     })
 }
-
+const promptManager = () => {
+    inquirer.prompt(managerQuestion).then(answer => {
+        employeeList.push(new Manager(answer.name, answer.id, answer.email, answer.officeNumber));
+        promptSelection();
+    })
+}
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
