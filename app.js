@@ -20,11 +20,13 @@ const managerQuestion = [
     }, {
         type: "input",
         name: "id",
-        message: "What is the manager's id number?"
+        message: "What is the manager's id number?  Use only numbers",
+        validate: val => /[0-9]/gi.test(val),
     }, {
         type: "input",
         name: "email",
-        message: "What is the manager's email?"
+        message: "What is the manager's email? name@mail.com",
+        validate: val => /[0-9a-zA-Z-_.]+@[0-9a-zA-Z]+[\.]{1}[0-9a-zA-Z]/gi.test(val),
     }, {
         type: "input",
         name: "officeNumber",
@@ -40,11 +42,13 @@ const engineerQuestion = [
     }, {
         type: "input",
         name: "id",
-        message: "What is the engineer's id number?"
+        message: "What is the engineer's id number? Use only numbers",
+        validate: val => /[0-9]/gi.test(val),
     }, {
         type: "input",
         name: "email",
-        message: "What is the engineer's email?"
+        message: "What is the engineer's email? name@mail.com",
+        validate: val => /[0-9a-zA-Z-_.]+@[0-9a-zA-Z]+[\.]{1}[0-9a-zA-Z]/gi.test(val),
     }, {
         type: "input",
         name: "github",
@@ -60,15 +64,17 @@ const internQuestion = [
     }, {
         type: "input",
         name: "id",
-        message: "What is the intern's id number?"
+        message: "What is the intern's id number? Use only numbers",
+        validate: val => /[0-9]/gi.test(val),
     }, {
         type: "input",
         name: "email",
-        message: "What is the intern's email?"
+        message: "What is the intern's email? name@mail.com",
+        validate: val => /[0-9a-zA-Z-_.]+@[0-9a-zA-Z]+[\.]{1}[0-9a-zA-Z]/gi.test(val),
     }, {
         type: "input",
         name: "school",
-        message: "What  the intern's school?"
+        message: "What is the intern's school?"
     }
 ]
 
@@ -121,7 +127,7 @@ const promptIntern = () => {
 const generateHtml = () => {
     fs.writeFile(outputPath, render(employeeList), (err) => {
         if (err) throw err;
-        console.log('File saved at ' + outputPath);
+        console.log('File generated at ' + outputPath);
     })
 }
 
