@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alidemirbay/Web-TeamProfileGenerator.git"
+    "url": "git+https://github.com/alidemirbay/team-profile-generator.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alidemirbay/Web-TeamProfileGenerator/issues"
+    "url": "https://github.com/alidemirbay/team-profile-generator/issues"
   },
-  "homepage": "https://github.com/alidemirbay/Web-TeamProfileGenerator",
+  "homepage": "https://github.com/alidemirbay/team-profile-generator",
   "dependencies": {
     "inquirer": "^6.3.1"
   },
